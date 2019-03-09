@@ -1,10 +1,8 @@
-package com.anuj.java8;
+package com.practice.java8;
 
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
 
 public class LambdaExample1 {

@@ -1,4 +1,4 @@
-package com.anuj.java8;
+package com.practice.java8;
 
 public class Person {
 

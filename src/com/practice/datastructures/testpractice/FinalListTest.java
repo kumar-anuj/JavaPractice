@@ -1,4 +1,4 @@
-package com.practice.TestPractice;
+package com.practice.datastructures.testpractice;
 
 import java.util.ArrayList;
 import java.util.List;

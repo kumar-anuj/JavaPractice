@@ -1,4 +1,4 @@
-package com.anuj.cloning;
+package com.practice.cloning;
 
 public class Desk {
 	

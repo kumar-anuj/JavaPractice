@@ -1,4 +1,4 @@
-package com.practice.DesignPatterns.StrategyPattern;
+package com.practice.designpatterns.behavioural.strategypattern;
 
 public interface Strategy {
 	

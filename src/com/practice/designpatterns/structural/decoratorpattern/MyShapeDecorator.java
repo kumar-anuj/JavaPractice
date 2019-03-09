@@ -1,4 +1,4 @@
-package com.practice.DesignPatterns.DecoratorPattern;
+package com.practice.designpatterns.structural.decoratorpattern;
 
 public abstract class MyShapeDecorator implements MyShape {
 
