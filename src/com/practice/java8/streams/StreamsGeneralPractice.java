@@ -1,13 +1,12 @@
-package com.practice.java8;
+package com.practice.java8.streams;
+
+import com.practice.java8.Person;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collector;
-import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-public class StreamsExample1 {
+public class StreamsGeneralPractice {
 
 	public static void main(String[] args) {
 		List<Person> person = Arrays.asList(
