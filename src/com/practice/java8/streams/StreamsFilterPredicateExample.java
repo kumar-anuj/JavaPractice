@@ -2,7 +2,6 @@ package com.practice.java8.streams;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.function.Function;
 import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
@@ -23,7 +22,7 @@ public class StreamsFilterPredicateExample {
         // Predicate OR
         System.out.println(lst.stream().filter(predicate1.or(predicate2)).collect(Collectors.toList()));
         // isEqual example
-        Predicate predicate3 = Predicate.isEqual("ONE");
+        Predicate<String> predicate3 = Predicate.isEqual("ONE");
         System.out.println(lst.stream().filter(predicate3).collect(Collectors.toList()));
 
 
