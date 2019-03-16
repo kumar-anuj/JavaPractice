@@ -18,6 +18,7 @@ public class StreamReductionExample1 {
 
         // Grouping example
         System.out.println(empLst.stream().collect(Collectors.groupingBy( t -> t.getDesk().getDeskPhone())));
+        System.out.println(empLst.stream().collect(Collectors.groupingBy( t -> t.getDesk().getDeskPhone(), Collectors.counting())));
 
 
     }
