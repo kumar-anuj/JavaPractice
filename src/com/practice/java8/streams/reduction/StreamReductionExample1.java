@@ -34,7 +34,11 @@ public class StreamReductionExample1 {
                 new Date(), new Desk(7029, 01206173232L));
         Employee emp5 = new Employee("rahul", "1005",
                 new Date(), new Desk(7024, 01206173231L));
+        Employee emp6 = new Employee("anuj", "1006",
+                new Date(), new Desk(8026, 01206173235L));
+        Employee emp7 = new Employee("mayank", "1007",
+                new Date(), new Desk(8028, 01206173233L));
 
-        return Arrays.asList(emp1, emp2, emp3, emp4, emp5);
+        return Arrays.asList(emp6, emp7, emp1, emp2, emp3, emp4, emp5 );
     }
 }
