@@ -12,6 +12,7 @@ public class SubmitRunnableTest {
 		Future<?> f = es.submit(() -> System.out.println("Runnable Test"));
 		Thread.sleep(500);
 		System.out.println("Output==>"+f.get());
+		es.shutdown();
 	}
 
 }
