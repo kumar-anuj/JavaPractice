@@ -6,10 +6,12 @@ public class WaitNotifyExample1 {
     public static void main(String[] args) throws InterruptedException {
         System.out.println("Main Start");
         MyObject obj = new MyObject(10);
-        Thread t1 = new Thread(new Waiter(obj), "Waiter");
-        Thread t2 = new Thread(new Notifier(obj), "Notifier");
-        t1.start(); t2.start();
-        t1.join(); t2.join();
+        Thread t1 = new Thread(new Waiter(obj), "Waiter1");
+        Thread t2 = new Thread(new Waiter(obj), "Waiter2");
+        Thread t3 = new Thread(new Waiter(obj), "Waiter3");
+        Thread t4 = new Thread(new Notifier(obj), "Notifier");
+        t1.start(); t2.start(); t3.start(); t4.start();
+        t1.join(); t2.join(); t3.join(); t4.join();
         System.out.println("Main Finish");
     }
 }
@@ -60,7 +62,7 @@ class Notifier implements Runnable{
                     obj.setValue(obj.getValue() + 2);
                 }
                 System.out.println(Thread.currentThread().getName() + ": notify");
-                obj.notify();
+                obj.notifyAll();
             }
         } catch (InterruptedException e) {
             e.printStackTrace();
