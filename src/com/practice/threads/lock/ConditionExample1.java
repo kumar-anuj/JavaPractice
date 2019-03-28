@@ -23,62 +23,62 @@ public class ConditionExample1 implements Runnable{
 
     private void addElement(String value)  {
         lock.lock();
+        System.out.println("1)" +Thread.currentThread().getName() + " lock ::"+lock.isHeldByCurrentThread());
             try {
                 if(lst.size() == 5) {
                     System.out.println(Thread.currentThread().getName() + ":: List Full::Wait");
                     isFull.await();
                 }
-                else {
-                    lst.add(value);
-                    System.out.println(Thread.currentThread().getName() +" :: Add  : " + value);
-                }
+                lst.add(value);
+                System.out.println(Thread.currentThread().getName() +" :: Add  : " + value);
 
                 isEmpty.signal();
-                System.out.println(Thread.currentThread().getName() + "::List Not Empty::Signal");
-                Thread.sleep(1000);
+
+                //System.out.println(Thread.currentThread().getName() + "::List Not Empty::Signal");
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
             finally {
-
                 lock.unlock();
+                System.out.println("2)" +Thread.currentThread().getName() + " lock ::"+lock.isHeldByCurrentThread());
             }
         }
 
     private void removeElement(int index) {
         String s="";
         lock.lock();
+        System.out.println("1)" +Thread.currentThread().getName() + " lock ::"+lock.isHeldByCurrentThread());
         try {
             if(lst.size() == 0) {
                 System.out.println(Thread.currentThread().getName() + ":: List Empty Wait");
                 isEmpty.await();
             }
-            else {
-                s = lst.remove(lst.size() - 1);
-                System.out.println(Thread.currentThread().getName() + ":: Remove :" + s);
-            }
+            s = lst.remove(lst.size() - 1);
+            System.out.println(Thread.currentThread().getName() + ":: Remove :" + s);
 
             isFull.signal();
-            System.out.println(Thread.currentThread().getName() + "::List Not Full::Signal");
-            Thread.sleep(1000);
+            //System.out.println(Thread.currentThread().getName() + "::List Not Full::Signal");
+            Thread.sleep(100);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
         finally {
-
             lock.unlock();
+            System.out.println("2)" +Thread.currentThread().getName() + " lock ::"+lock.isHeldByCurrentThread());
         }
     }
 
     @Override
     public void run() {
-        for(int i =0; i<20; i++) {
+        for(int i =0; i<10; i++) {
             if(Thread.currentThread().getName().equals("Thread 1")) {
                 addElement(String.valueOf(i));
             }
             if(Thread.currentThread().getName().equals("Thread 2")) {
                 removeElement(i);
             }
+
         }
 
         System.out.println(Thread.currentThread().getName() + "::Final size ::" + lst.size());
