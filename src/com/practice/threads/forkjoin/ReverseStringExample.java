@@ -29,7 +29,7 @@ public class ReverseStringExample {
 
 class NewAction extends RecursiveAction {
     private List<String> workLoad;
-    List<NewAction> subtasks = new ArrayList<NewAction>();
+    private List<NewAction> subtasks = new ArrayList<NewAction>();
 
     public NewAction(List<String> workLoad) {
         this.workLoad = workLoad;

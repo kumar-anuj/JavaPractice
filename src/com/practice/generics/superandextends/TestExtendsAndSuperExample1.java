@@ -3,7 +3,7 @@ package com.practice.generics.superandextends;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TestExtendsAndSuper {
+public class TestExtendsAndSuperExample1 {
 
 	public static void main(String[] args) {
 		// Extends Example - Can only Read
@@ -19,6 +19,7 @@ public class TestExtendsAndSuper {
 		List<SuperSuperClass> lstSS = new ArrayList<>();
 		lstSS.add(new SuperSuperClass(11));
 		lstSS.add(new SuperClass(12));
+		lstSS.add(new SubClassA(20));
 		writeList(lstSS);
 		
 		// Read and Write both
@@ -36,6 +37,8 @@ public class TestExtendsAndSuper {
 	
 	private static void writeList(List<? super SuperClass> lst) {
 		lst.add(new SuperClass(13));
+		lst.add(new SubClassA(11));
+		lst.add(new SubClassB(12));
 		System.out.println(lst);
 	}
 
