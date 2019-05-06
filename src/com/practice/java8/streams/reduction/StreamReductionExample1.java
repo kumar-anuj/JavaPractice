@@ -25,19 +25,19 @@ public class StreamReductionExample1 {
 
     public static List<Employee> createEmployeeList() {
         Employee emp1 = new Employee("anuj", "1001",
-                new Date(), new Desk(7026, 01206173235L));
+                new Date(), new Desk(7026, 01206173235L), 10000);
         Employee emp2 = new Employee("abhi", "1002",
-                new Date(), new Desk(7027, 01206173233L));
+                new Date(), new Desk(7027, 01206173233L), 20000);
         Employee emp3 = new Employee("mayank", "1003",
-                new Date(), new Desk(7028, 01206173233L));
+                new Date(), new Desk(7028, 01206173233L), 15000);
         Employee emp4 = new Employee("vishal", "1004",
-                new Date(), new Desk(7029, 01206173232L));
+                new Date(), new Desk(7029, 01206173232L), 100000);
         Employee emp5 = new Employee("rahul", "1005",
-                new Date(), new Desk(7024, 01206173231L));
+                new Date(), new Desk(7024, 01206173231L), 20000);
         Employee emp6 = new Employee("anuj", "1006",
-                new Date(), new Desk(8026, 01206173235L));
+                new Date(), new Desk(8026, 01206173235L), 50000);
         Employee emp7 = new Employee("mayank", "1007",
-                new Date(), new Desk(8028, 01206173233L));
+                new Date(), new Desk(8028, 01206173233L), 45000);
 
         return Arrays.asList(emp6, emp7, emp1, emp2, emp3, emp4, emp5 );
     }

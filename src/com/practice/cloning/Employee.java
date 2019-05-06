@@ -8,7 +8,16 @@ public class Employee implements Cloneable{
 	private String id;
 	private Date dob;
 	private Desk desk;
+	private int salary;
 	
+	public Employee (String name, String id, Date dob, Desk desk, int salary) {
+		this.name = name;
+		this.id = id;
+		this.dob = dob;
+		this.desk = desk;
+		this.salary = salary;
+	}
+
 	public Employee (String name, String id, Date dob, Desk desk) {
 		this.name = name;
 		this.id = id;
@@ -21,6 +30,7 @@ public class Employee implements Cloneable{
 		this.id = emp.getId();
 		this.dob = emp.getDob();
 		this.desk = new Desk(emp.getDesk());
+		this.salary = emp.getSalary();
 	}
 
 	@Override
@@ -70,6 +80,14 @@ public class Employee implements Cloneable{
 
 	public void setDesk(Desk desk) {
 		this.desk = desk;
+	}
+
+	public int getSalary() {
+		return salary;
+	}
+
+	public void setSalary(int salary) {
+		this.salary = salary;
 	}
 	
 }
