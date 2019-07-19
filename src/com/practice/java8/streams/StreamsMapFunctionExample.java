@@ -1,5 +1,8 @@
 package com.practice.java8.streams;
 
+import com.practice.cloning.Employee;
+import com.practice.java8.streams.reduction.StreamReductionExample1;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
@@ -24,6 +27,14 @@ public class StreamsMapFunctionExample {
         Function<String, String> func3 = Function.identity();
         System.out.println(lst.stream().map(func3).collect(Collectors.toList()));
 
+        // Update all Employees salary
+        List<Employee> empLst = StreamReductionExample1.createEmployeeList();
+        Function<Employee, Employee> f1 = emp -> {
+            emp.setSalary(200);
+            return emp;
+        };
+
+        empLst.stream().map(f1).collect(Collectors.toList()).forEach( e -> System.out.println(e.getSalary()));
 
     }
 }
