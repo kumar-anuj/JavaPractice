@@ -10,8 +10,8 @@ public class CustomTreadPool {
     private BlockingQueue<Runnable> queue;
     private volatile boolean shutdown;
 
-    public CustomTreadPool(int size) {
-        this.size = size;
+    public CustomTreadPool(int siz) {
+        this.size = siz;
         shutdown = false;
         queue = new LinkedBlockingQueue<>();
         for (int i = 0; i <= size; i++) {
