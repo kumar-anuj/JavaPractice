@@ -13,7 +13,7 @@ public class StreamReductionExample2 {
         Collection<Long> values = strMap.values();
         // Collection of long to Collection of Integer
         //Collection<Integer> intValues = values.stream().mapToInt(t -> t.intValue()).boxed().collect(Collectors.toList());
-        List<Integer> intValues = values.stream().mapToInt(t -> t.intValue()).boxed().collect(Collectors.toList());
+        List<Integer> intValues = values.stream().mapToInt(Long::intValue).boxed().collect(Collectors.toList());
 
         // Reverse sort
         //intValues = intValues.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
