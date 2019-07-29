@@ -3,7 +3,6 @@ package com.practice.java8.streams.reduction;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class StreamReductionExample2 {
     public static void main(String[] args) {
@@ -13,9 +12,12 @@ public class StreamReductionExample2 {
         System.out.println(strMap);
         Collection<Long> values = strMap.values();
         // Collection of long to Collection of Integer
-        Collection<Integer> intValues = values.stream().mapToInt(t -> t.intValue()).boxed().collect(Collectors.toList());
+        //Collection<Integer> intValues = values.stream().mapToInt(t -> t.intValue()).boxed().collect(Collectors.toList());
+        List<Integer> intValues = values.stream().mapToInt(t -> t.intValue()).boxed().collect(Collectors.toList());
+
         // Reverse sort
-        intValues = intValues.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        //intValues = intValues.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
+        intValues.sort(Comparator.reverseOrder());
 
         Set<String> mapKeys = strMap.keySet();
         Map<String, Long> newMap = new LinkedHashMap<>();
