@@ -1,4 +1,4 @@
-package com.practice.java8.streams;
+package com.practice.java8.streams.map;
 
 import com.practice.cloning.Employee;
 import com.practice.java8.streams.reduction.StreamReductionExample1;
@@ -6,7 +6,6 @@ import com.practice.java8.streams.reduction.StreamReductionExample1;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collectors;
 
 public class StreamsMapFunctionExample {

@@ -1,9 +1,8 @@
-package com.practice.java8;
+package com.practice.java8.streams.generalpractice;
 
 import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Supplier;
 
 public class TestOptionalClass {
 

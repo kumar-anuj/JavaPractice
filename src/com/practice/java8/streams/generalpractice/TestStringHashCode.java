@@ -1,11 +1,6 @@
-package com.practice.java8;
+package com.practice.java8.streams.generalpractice;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class TestStringHashCode {
 	
@@ -14,6 +9,7 @@ public class TestStringHashCode {
 	public static List<Character> totalLst = new ArrayList<>();
 	public static Map<String, Integer> charMap = null;
 
+	/* Find two alphabet strings with same hashcode*/
 	public static void main(String[] args) {
 		lowerLst = createCharList();
 		

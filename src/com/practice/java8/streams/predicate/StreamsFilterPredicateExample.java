@@ -1,4 +1,4 @@
-package com.practice.java8.streams;
+package com.practice.java8.streams.predicate;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,4 +1,6 @@
-package com.practice.java8;
+package com.practice.java8.streams.generalpractice;
+
+import com.practice.java8.Person;
 
 import java.util.Arrays;
 import java.util.Collections;

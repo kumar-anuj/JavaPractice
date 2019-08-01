@@ -1,4 +1,4 @@
-package com.practice.java8.streams;
+package com.practice.java8.streams.generalpractice;
 
 import com.practice.java8.Person;
 

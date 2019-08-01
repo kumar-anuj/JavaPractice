@@ -1,4 +1,4 @@
-package com.practice.java8;
+package com.practice.java8.streams.generalpractice;
 
 import java.util.Arrays;
 import java.util.List;
@@ -9,10 +9,13 @@ interface ABC {
 	boolean equals(Object o);
 	boolean equals1(Object o);
 }
+
 @FunctionalInterface
 interface X { Iterable m(Iterable<String> arg); }
+
 @FunctionalInterface
 interface Y { Iterable<String> m(Iterable arg); }
+
 @FunctionalInterface
 interface Z extends X, Y {}
 
