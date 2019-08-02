@@ -3,6 +3,7 @@ package com.practice.java8.comparison;
 import java.util.Comparator;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.ToIntFunction;
 
 import com.practice.cloning.Employee;
 import com.practice.java8.streams.reduction.StreamReductionExample1;
@@ -14,9 +15,14 @@ public class ComparisonTest1 {
 		
 		Function<Employee, String> funcName = emp -> emp.getName();
 		Function<Employee, String> funcId = emp -> emp.getId();
-		
+
+		/* Sort Employees on the basis of name and then id */
 		empLst.sort(Comparator.comparing(funcName).thenComparing(funcId));
-		
+		empLst.forEach(System.out::println);
+
+		/* Sort Employees on the basis of salary*/
+		ToIntFunction<Employee> funcSal = emp -> emp.getSalary();
+		empLst.sort(Comparator.comparingInt(funcSal));
 		empLst.forEach(System.out::println);
 	}
 

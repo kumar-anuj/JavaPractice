@@ -52,7 +52,7 @@ public class Employee implements Cloneable{
 	
 	@Override
 	public String toString() {
-		return this.getName() + ": "+ this.getId() + ": "+ this.getDob().toString() + ": " + this.desk.getSeatNo();
+		return this.getName() + ": "+ this.getId() + ": "+ this.getDob().toString() + ": " + this.desk.getSeatNo() + ": " + this.getSalary();
 	}
 	
 	public String getName() {

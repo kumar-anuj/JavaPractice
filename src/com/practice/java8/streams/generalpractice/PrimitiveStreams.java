@@ -1,9 +1,7 @@
-package com.practice.java8.streams;
+package com.practice.java8.streams.generalpractice;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
 public class PrimitiveStreams {
@@ -21,8 +19,5 @@ public class PrimitiveStreams {
         System.out.println(lst.stream().mapToInt(t -> t.length()).max().getAsInt());
         // IntStream Summary Statistics
         System.out.println(lst.stream().mapToInt(t -> t.length()).summaryStatistics());
-
-
-
     }
 }
