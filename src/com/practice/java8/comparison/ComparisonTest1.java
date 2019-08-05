@@ -13,15 +13,15 @@ public class ComparisonTest1 {
 	public static void main(String[] args) {
 		List<Employee> empLst = StreamReductionExample1.createEmployeeList();
 		
-		Function<Employee, String> funcName = emp -> emp.getName();
-		Function<Employee, String> funcId = emp -> emp.getId();
+		Function<Employee, String> funcName = Employee::getName;
+		Function<Employee, String> funcId = Employee::getId;
 
 		/* Sort Employees on the basis of name and then id */
 		empLst.sort(Comparator.comparing(funcName).thenComparing(funcId));
 		empLst.forEach(System.out::println);
 
 		/* Sort Employees on the basis of salary*/
-		ToIntFunction<Employee> funcSal = emp -> emp.getSalary();
+		ToIntFunction<Employee> funcSal = Employee::getSalary;
 		empLst.sort(Comparator.comparingInt(funcSal));
 		empLst.forEach(System.out::println);
 	}

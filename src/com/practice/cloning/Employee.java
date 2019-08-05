@@ -2,7 +2,8 @@ package com.practice.cloning;
 
 import java.util.Date;
 
-public class Employee implements Cloneable{
+public class Employee //implements Cloneable
+{
 	
 	private String name;
 	private String id;
@@ -33,11 +34,11 @@ public class Employee implements Cloneable{
 		this.salary = emp.getSalary();
 	}
 
-	@Override
+	/*@Override
 	protected Object clone() throws CloneNotSupportedException {
 		//return (Employee)super.clone();
 		return new Employee(this);
-	}
+	}*/
 	
 	@Override
 	public boolean equals(Object obj) {
@@ -48,6 +49,10 @@ public class Employee implements Cloneable{
 				return true;
 		}
 		return false;
+	}
+	@Override
+	public int hashCode() {
+		return ((this.getName() + this.getId()).hashCode() + this.getSalary())%17;
 	}
 	
 	@Override
