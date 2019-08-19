@@ -19,6 +19,7 @@ public class ComparisonTest1 {
 		/* Sort Employees on the basis of name and then id */
 		empLst.sort(Comparator.comparing(funcName).thenComparing(funcId));
 		empLst.forEach(System.out::println);
+		System.out.println("=============================================");
 
 		/* Sort Employees on the basis of salary*/
 		ToIntFunction<Employee> funcSal = Employee::getSalary;
