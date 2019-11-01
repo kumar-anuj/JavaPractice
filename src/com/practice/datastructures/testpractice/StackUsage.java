@@ -1,6 +1,6 @@
 package com.practice.datastructures.testpractice;
 
-import com.practice.datastructures.MyStack;
+import com.practice.datastructures.custom.MyStack;
 
 import java.util.ArrayList;
 import java.util.List;

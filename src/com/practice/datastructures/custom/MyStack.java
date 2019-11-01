@@ -1,4 +1,4 @@
-package com.practice.datastructures;
+package com.practice.datastructures.custom;
 
 import java.util.ArrayList;
 import java.util.List;
