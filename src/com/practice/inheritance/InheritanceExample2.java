@@ -5,8 +5,14 @@ public class InheritanceExample2 {
         MySuper sup = new MySub();
         MySub sub = new MySub();
 
-        System.out.println(sub.i);
-        System.out.println(sup.i);
+        new InheritanceExample2().print(sup, sub);
+    }
+
+    private void print(MySuper sup, MySub sub) {
+        System.out.println("Subclass :" + sub.i);
+        System.out.println("Superclass :" + sup.i);
+        sub.display();
+        sup.display();
     }
 }
 

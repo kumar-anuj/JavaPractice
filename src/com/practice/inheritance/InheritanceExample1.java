@@ -11,54 +11,54 @@ public class InheritanceExample1 {
  class A {
 
     static {
-        System.out.println("A static");
+        System.out.println("Super static");
     }
     {
-        System.out.println("A init");
+        System.out.println("Super init");
     }
     A() {
         super();
-        System.out.println("A constructor");
+        System.out.println("Super constructor");
     }
 
     A(int i) {
         super();
-        System.out.println("A constructor 1");
+        System.out.println("Super constructor 1");
     }
 
     public void display() {
-        System.out.println("display");
+        System.out.println("display Super");
     }
 
     public void  view() {
-        System.out.println("view");
+        System.out.println("view Super");
     }
 
     public  void print() {
-        System.out.println("print A");
+        System.out.println("print Super");
     }
 }
 
 class B extends  A{
 
     static {
-        System.out.println("B static");
+        System.out.println("Sub static");
     }
     {
-        System.out.println("B init");
+        System.out.println("Sub init");
     }
     B() {
         super();
-        System.out.println("B constructor");
+        System.out.println("Sub constructor");
     }
 
     @Override
     public void print() {
-        System.out.println("print B");
+        System.out.println("print Sub");
     }
 
     public void hello() {
-        System.out.println("hello");
+        System.out.println("hello Sub");
     }
 
 }
