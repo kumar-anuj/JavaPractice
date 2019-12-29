@@ -4,6 +4,7 @@ import com.practice.cloning.Desk;
 import com.practice.cloning.Employee;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -13,7 +14,7 @@ public class StreamReductionExample1 {
         List<Employee> empLst = createEmployeeList();
 
         // Get Max Emp ID
-        System.out.println(empLst.stream().map(Employee::getId).max((o1, o2) -> o1.compareTo(o2)).get());
+        System.out.println(empLst.stream().map(Employee::getId).max(Comparator.naturalOrder()).get());
         System.out.println(empLst.stream().map(Employee::getId).reduce("1000", (s1, s2) -> s2.compareTo(s1) > 0 ? s2 : s1));
 
         // Grouping example

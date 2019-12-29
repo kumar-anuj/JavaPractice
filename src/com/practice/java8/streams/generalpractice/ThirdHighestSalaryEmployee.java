@@ -25,11 +25,11 @@ public class ThirdHighestSalaryEmployee {
         System.out.println(empMap.get(lst.get(2)));
 
 //===================================================================================================
-        Employee emp1= empLst.stream().max((e1, e2) -> ((Integer)e1.getSalary()).compareTo((Integer)e2.getSalary()) ).get();
+        Employee emp1= empLst.stream().max(Comparator.comparing(e -> ((Integer) e.getSalary()))).get();
         System.out.println(emp1);
-        Employee emp2= empLst.stream().filter(e -> (e != emp1)).max((e1, e2) -> ((Integer)e1.getSalary()).compareTo((Integer)e2.getSalary()) ).get();
+        Employee emp2= empLst.stream().filter(e -> (e != emp1)).max(Comparator.comparing(e -> ((Integer) e.getSalary()))).get();
         System.out.println(emp2);
-        Employee emp3= empLst.stream().filter(e -> (e != emp1) && (e != emp2)  ).max((e1, e2) -> ((Integer)e1.getSalary()).compareTo((Integer)e2.getSalary()) ).get();
+        Employee emp3= empLst.stream().filter(e -> (e != emp1) && (e != emp2)  ).max(Comparator.comparing(e -> ((Integer) e.getSalary()))).get();
         System.out.println(emp3);
 
     }
