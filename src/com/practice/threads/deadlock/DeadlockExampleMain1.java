@@ -25,14 +25,14 @@ class NewThread implements  Runnable {
 
     @Override
     public void run() {
-        try {
-            Thread.sleep(3000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
         System.out.println("1::"+ Thread.currentThread().getName());
         if(Thread.currentThread().getName().equals("ONE")) {
             synchronized (obj1) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("ONE ::" + obj1.getValue());
                 synchronized (obj2) {
                     System.out.println("ONE ::" + obj2.getValue());
@@ -43,6 +43,11 @@ class NewThread implements  Runnable {
         System.out.println("2::"+ Thread.currentThread().getName());
         if(Thread.currentThread().getName().equals("TWO")) {
             synchronized (obj2) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
                 System.out.println("TWO ::" + obj2.getValue());
                 synchronized (obj1) {
                     System.out.println("TWO ::" + obj1.getValue());

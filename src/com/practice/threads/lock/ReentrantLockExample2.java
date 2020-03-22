@@ -36,10 +36,10 @@ class NewThread1 implements Runnable {
             lock.lockInterruptibly();
             System.out.println(Thread.currentThread().getName() + " Inside lock " );
             boolean flag;
-            while(!( flag = Thread.interrupted())) {}
-            System.out.println("Interrupted " + flag);
+            while(!( flag = Thread.currentThread().interrupted())) {}
+            System.out.println(Thread.currentThread().getName() + " Interrupted " + flag);
         } catch (InterruptedException e) {
-            System.out.println(Thread.currentThread().getName() +": Interrupted");
+            System.out.println(Thread.currentThread().getName() +" Inside Catch: Interrupted");
         }
         finally {
             if(lock.isHeldByCurrentThread())
