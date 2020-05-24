@@ -16,21 +16,18 @@ public class MaxSubarraySum2 {
 			int window = 1;
 			long sum = 0L;
 			
-			System.out.println("===================");
-			while(window <= a.length) {
-				if(i + window > a.length)
+			while(i + window <= a.length) {
+				sum += a[i + window -1];
+				if(sum%m > result)
+					result = sum%m;
+				
+				if(result == m-1)
 					break;
-				
-				sum = sum + a[i + window -1];
-				System.out.println(a[i + window -1] + ",");
-				long intmdRes = sum%m;
-				
-				System.out.println("intmdRes==>"+intmdRes);
-				if(intmdRes > result)
-					result = intmdRes;
 					
 				window ++;
 			}
+			if(result == m-1)
+				break;
 		}
 
 		System.out.println("Result===>" + result);
