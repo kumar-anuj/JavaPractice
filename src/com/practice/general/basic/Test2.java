@@ -26,9 +26,9 @@ public class Test2 {
                 case 0 :
 
                     int rd = ra.nextInt();
-                    int x = 1700 + (rd < 0 ? 0 : rd) % 780;
+                    int x = 2200 + (Math.max(rd, 100)) % 780;
                     rd = ra.nextInt();
-                    int y = 300 + (rd < 0 ? 0 : rd) % 510;
+                    int y = 300 + (Math.max(rd, 100)) % 510;
                     //System.out.println("X:" + x + " :: Y:" + y);
                     ro.mouseMove(x, y);
 
