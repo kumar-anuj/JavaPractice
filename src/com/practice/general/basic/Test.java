@@ -9,49 +9,61 @@ public class Test {
     public static void main(String[] args) throws Exception {
         Robot ro = new Robot();
         Random ra = new Random();
-        int count = 0;
 
         while(true) {
-            int value = count%4;
-            count++;
-            if(count >1000)
-                count = 0;
 
-            int delay = 5000 + 2000*value;
-            ro.delay(delay);
+            ro.delay(3000 + ra.nextInt(10000));
 
-            switch(value) {
+            if(ra.nextInt(100) < 30)
+                continue;
 
-                default:
-                case 0 :
+            doSomething(ro, ra);
 
-                    int rd = ra.nextInt();
-                    int x = 300 + (Math.max(rd, 50)) % 780;
-                    rd = ra.nextInt();
-                    int y = 164 + (Math.max(rd, 50)) % 450;
-                    //System.out.println("X:" + x + " :: Y:" + y);
-                    ro.mouseMove(x, y);
-
-                    //Point p = MouseInfo.getPointerInfo().getLocation();
-                    //System.out.println("Point X:" + p.getX() + " ::Point Y:" + p.getY());
-                    break;
-
-                case 1:
-                    ro.mousePress(BUTTON1_DOWN_MASK);
-                    ro.mouseRelease(BUTTON1_DOWN_MASK);
-                    break;
-
-                case 2 :
-                    ro.mouseWheel(value);
-                    break;
-
-                case 3 :
-                    ro.mouseWheel(-value);
-                    break;
-
+            if(ra.nextInt(100) < 25) {
+                ro.delay(200 + ra.nextInt(600));
+                doSomething(ro, ra);
             }
+        }
+    }
+
+    private static void doSomething(Robot ro, Random ra) {
+        int value = ra.nextInt(4);
+        ro.delay(3000 + ra.nextInt(10000));
+
+        switch(value) {
+
+            default:
+            case 0 :
+
+                int rd = ra.nextInt();
+                int x = 300 + (Math.max(rd, 50)) % 780;
+                rd = ra.nextInt();
+                int y = 164 + (Math.max(rd, 50)) % 450;
+                //System.out.println("X:" + x + " :: Y:" + y);
+                ro.mouseMove(x, y);
+
+                //Point p = MouseInfo.getPointerInfo().getLocation();
+                //System.out.println("Point X:" + p.getX() + " ::Point Y:" + p.getY());
+                break;
+
+            case 1:
+                ro.mousePress(BUTTON1_DOWN_MASK);
+                ro.delay(30 + ra.nextInt(100));
+                ro.mouseRelease(BUTTON1_DOWN_MASK);
+                break;
+
+            case 2 :
+                ro.mouseWheel(value + ra.nextInt(10));
+                break;
+
+            case 3 :
+                ro.mouseWheel(-(value + ra.nextInt(9)));
+                break;
+
+
 
         }
+
     }
 
 }
