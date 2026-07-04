@@ -1,11 +1,17 @@
 package com.practice.general.basic;
 
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.time.LocalTime;
 import java.util.*;
 
 import static java.awt.event.InputEvent.BUTTON1_DOWN_MASK;
 
 public class Test2 {
+
+    private static final int[] SAFE_KEYS = {KeyEvent.VK_UP, KeyEvent.VK_DOWN, KeyEvent.VK_LEFT,
+            KeyEvent.VK_RIGHT, KeyEvent.VK_PAGE_DOWN, KeyEvent.VK_PAGE_UP};
+
     public static void main(String[] args) throws Exception {
         Robot ro = new Robot();
         Random ra = new Random();
@@ -27,14 +33,14 @@ public class Test2 {
     }
 
     private static void doSomething(Robot ro, Random ra) {
-        int value = ra.nextInt(4);
-        ro.delay(3000 + ra.nextInt(10000));
+        int value = ra.nextInt(5);
+        //System.out.println("Value:" + value + " at time:" + LocalTime.now());
+        ro.delay(3000 + ra.nextInt(20000));
 
         switch(value) {
 
-            default:
-            case 0 :
 
+            case 0 :
                 int rd = ra.nextInt();
                 int x = 2200 + (Math.max(rd, 100)) % 780;
                 rd = ra.nextInt();
@@ -60,10 +66,20 @@ public class Test2 {
                 ro.mouseWheel(-(value + ra.nextInt(9)));
                 break;
 
-
+            case 4 :
+            default:
+                doNothing(ro, ra);
+                break;
 
         }
 
+    }
+
+    private static void doNothing(Robot ro, Random ra) {
+        int key = SAFE_KEYS[ra.nextInt(SAFE_KEYS.length)];
+        ro.keyPress(key);
+        ro.delay(30 + ra.nextInt(70));
+        ro.keyRelease(key);
     }
 
 }
