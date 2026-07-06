@@ -18,7 +18,7 @@ public class Test2 {
 
         while(true) {
 
-            ro.delay(3000 + ra.nextInt(10000));
+            ro.delay(3000 + ra.nextInt(20000));
 
             if(ra.nextInt(100) < 30)
                 continue;
@@ -41,35 +41,43 @@ public class Test2 {
 
 
             case 0 :
-                int rd = ra.nextInt();
-                int x = 2200 + (Math.max(rd, 100)) % 780;
-                rd = ra.nextInt();
-                int y = 300 + (Math.max(rd, 100)) % 510;
-                //System.out.println("X:" + x + " :: Y:" + y);
-                ro.mouseMove(x, y);
+                if(!(ra.nextInt(100) < 20)) {
 
-                //Point p = MouseInfo.getPointerInfo().getLocation();
-                //System.out.println("Point X:" + p.getX() + " ::Point Y:" + p.getY());
+                    int rd = ra.nextInt();
+                    int x = 2200 + (Math.max(rd, 100)) % 780;
+                    rd = ra.nextInt();
+                    int y = 300 + (Math.max(rd, 100)) % 510;
+                    //System.out.println("X:" + x + " :: Y:" + y);
+                    ro.mouseMove(x, y);
+
+                    //Point p = MouseInfo.getPointerInfo().getLocation();
+                    //System.out.println("Point X:" + p.getX() + " ::Point Y:" + p.getY());
+                }
                 break;
 
             case 1:
-                ro.mousePress(BUTTON1_DOWN_MASK);
-                ro.delay(30 + ra.nextInt(100));
-                ro.mouseRelease(BUTTON1_DOWN_MASK);
+                if(!(ra.nextInt(100) < 20)) {
+                    ro.mousePress(BUTTON1_DOWN_MASK);
+                    ro.delay(30 + ra.nextInt(100));
+                    ro.mouseRelease(BUTTON1_DOWN_MASK);
+                }
                 break;
 
             case 2 :
-                ro.mouseWheel(value + ra.nextInt(10));
+                if(!(ra.nextInt(100) < 20)) {
+                    ro.mouseWheel(value + ra.nextInt(10));
+                }
                 break;
 
             case 3 :
-                ro.mouseWheel(-(value + ra.nextInt(9)));
+                if(!(ra.nextInt(100) < 20)) {
+                    ro.mouseWheel(-(value + ra.nextInt(9)));
+                }
                 break;
 
             case 4 :
             default:
                 doNothing(ro, ra);
-                break;
 
         }
 
